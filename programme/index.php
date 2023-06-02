@@ -2,13 +2,13 @@
 <html>
         <head>
           <title>Info Activ</title>
-          <link href="style.css" rel="stylesheet">
+          <link href="style/style.css" rel="stylesheet">
         </head>
     <body>
         <div class="container">
           <header>
             <div class="logo">
-              <img src="image/lycée%20la%20coliniere.jpeg" alt="logo du lycée la coliniere">
+              <img src="../image/lycée%20la%20coliniere.jpeg" alt="logo du lycée la coliniere">
             </div>
             <h1>Info Activ</h1>
             <nav>
