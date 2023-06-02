@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
         <head>
           <title>Info Activ</title>
           <link href="style/style.css" rel="stylesheet">
@@ -8,7 +8,7 @@
         <div class="container">
           <header>
             <div class="logo">
-              <img src="../image/lycée%20la%20coliniere.jpeg" alt="logo du lycée la coliniere">
+              <img src="logoLycee.jpeg" alt="logo du lycée la coliniere">
             </div>
             <h1>Info Activ</h1>
             <nav>
@@ -24,7 +24,7 @@
             <section class="presentation">
                 <div class="left-block">
                     <!-- Contenu du bloc à gauche (Présentation de l'association Info Activ) -->
-                    <h2> Qui Sommes Nous?</h2>
+                    <h2> Qui Sommes-Nous?</h2>
                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolor perferendis placeat temporibus. A ab adipisci alias aliquam assumenda culpa cum delectus dignissimos distinctio dolor esse id laboriosam natus nesciunt, odio perferendis possimus quasi quisquam quo quos sapiente similique sunt temporibus totam vero. Debitis enim ipsum laboriosam libero nulla quo?</p>
                 </div>
 
