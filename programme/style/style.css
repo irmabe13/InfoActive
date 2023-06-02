@@ -19,9 +19,10 @@ h1 {
 }
 
 nav {
-    background-color: #f0f0f0;
+
     padding: 10px;
     text-align: center;
+    background: #9c45ea;
 }
 
 nav ul {
@@ -102,10 +103,17 @@ nav li a {
 .middle-block {
     width: 70%;
 }
-.container {
-    min-height: 100%;
+
+
+/* Styles pour fixer le footer en bas de la page */
+body {
     display: flex;
     flex-direction: column;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .content {
@@ -116,25 +124,10 @@ footer {
     background-color: #f0f0f0;
     padding: 20px;
     text-align: center;
-}
-
-/* Styles pour fixer le footer en bas de la page */
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    flex: 1;
-}
-.footer-links {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #000;
-    margin-right: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .contact-info {
