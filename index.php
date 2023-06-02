@@ -24,11 +24,12 @@
             <section class="presentation">
                 <div class="left-block">
                     <!-- Contenu du bloc à gauche (Présentation de l'association Info Activ) -->
-                    L'associationInfo Activ c'est une association du Lycée la coliniere pour les BTS ...
+                    <h2> Qui Sommes Nous?</h2>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolor perferendis placeat temporibus. A ab adipisci alias aliquam assumenda culpa cum delectus dignissimos distinctio dolor esse id laboriosam natus nesciunt, odio perferendis possimus quasi quisquam quo quos sapiente similique sunt temporibus totam vero. Debitis enim ipsum laboriosam libero nulla quo?</p>
                 </div>
 
                 <div class="actions">
-
+                    <h2>Actions</h2>
                     <div class="arrow-up">
                         <!-- Flèche vers le haut pour voir les actions des années précédentes -->
                     </div>
@@ -40,13 +41,12 @@
 
             <section class="partnership">
                 <div class="left-block">
-                    <p>Nantes Metropole</p>
-                </div>
-                <div class="middle-block">
-                    <!-- Contenu du bloc d'écran moyen -->
+                    <h2>Partenaires</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, error?</p>
                 </div>
             </section>
             </div>
+
             <footer>
             <div class="footer-links">
               <a href="https://coliniere.paysdelaloire.e-lyco.fr/">Lycée la Coliniere</a>
