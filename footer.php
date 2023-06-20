@@ -41,7 +41,7 @@
 
         <div>
             <?php h3('footer-titre-partenaires', 'medium up')?>
-            <?php media('partenaire-logo', '250')?>
+            <a href="https://www.toma-interim.com/" target="_blank"><?php media('partenaire-logo', '250')?></a>
 
         </div>
 
