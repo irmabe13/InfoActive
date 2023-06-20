@@ -1,15 +1,8 @@
 <?php  if(!$GLOBALS['domain']) exit; ?>
 
-<style>
-	.content article { border-left: 0.2em solid #c24859; }
-</style>
-
-
 <section class="mw960p mod center mtm mbl">
 
-
 	<?php h1('title', 'mbn tc')?>
-
 
 	<nav role="navigation" class="mts tc italic">
 		<?php 
@@ -27,13 +20,6 @@
 		}
 		?>
 	</nav>
-
-	<div class="mod">
-		<div class="fl"><?php media('img', '130')?></div>
-
-		<div class="fl mlm"><?php txt('description')?></div>
-	</div>
-
 
 	<?php 
 	// Si on n'a pas les droits d'édition des articles on affiche uniquement ceux actifs
@@ -78,21 +64,24 @@
 		$date = explode("-", explode(" ", $res_fiche['date_insert'])[0]);
 		?>
 
-        <article class="mod plm mrm mtl mbm">
+		<a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="tdn">
+			<article class="mod plm mrm mtl mbm">
 
+				<hgroup>
+					<h2><?=$res_fiche['title']?><?=$state?'<aside>'.$state.'</aside>':null;?></h2>
 
-			<div class="date fl prm up bold big tc">
-				<div class="bigger"><?=$date[2]?></div>
-				<div><?=trim(mb_convert_encoding(date("M", strtotime($res_fiche['date_insert'])), 'UTF-8', mb_list_encodings()),".")?></div>
-			</div>
+					<p>
+						Article publié le 
+						<time class="" datetime="<?=$res_fiche['date_insert']?>"><?=strftime('%d %B %Y', strtotime(@$res_fiche['date_insert']))?></time>
+					</p>
+				</hgroup>
 
-			<h2 class="mts up bigger"><a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="tdn"><?=$res_fiche['title']?></a><?=$state?></h2>
+				<p class="article-text"><?php if(isset($content_fiche['texte'])) echo word_cut($content_fiche['texte'], '350')."…";?></p>
+				
+				<div class="fr mtm"><a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="bt bg-color bold"><?php _e("Lire l'article")?></a></div>
 
-		<p class="article-text"><?php if(isset($content_fiche['texte'])) echo word_cut($content_fiche['texte'], '350')."...";?></p>
-            <img   src="<?php echo $content_fiche['visuel']?>" alt="">
-			<div class="fr mtm"><a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="bt bg-color bold"><?php _e("Lire l'article")?></a></div>
-
-		</article>
+			</article>
+		</a>
 		<?php 
 	}
 
