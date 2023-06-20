@@ -1,7 +1,7 @@
 <?php  if(!$GLOBALS['domain']) exit; ?>
 
 <style>
-	.content article { border-left: 0.2em solid #35747f; }
+	.content article { border-left: 0.2em solid #c24859; }
 </style>
 
 
@@ -77,7 +77,9 @@
 
 		$date = explode("-", explode(" ", $res_fiche['date_insert'])[0]);
 		?>
-		<article class="mod plm mrm mtl mbm">
+
+        <article class="mod plm mrm mtl mbm">
+
 
 			<div class="date fl prm up bold big tc">
 				<div class="bigger"><?=$date[2]?></div>
@@ -86,8 +88,8 @@
 
 			<h2 class="mts up bigger"><a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="tdn"><?=$res_fiche['title']?></a><?=$state?></h2>
 
-			<?php if(isset($content_fiche['texte'])) echo word_cut($content_fiche['texte'], '350')."...";?>
-
+		<p class="article-text"><?php if(isset($content_fiche['texte'])) echo word_cut($content_fiche['texte'], '350')."...";?></p>
+            <img   src="<?php echo $content_fiche['visuel']?>" alt="">
 			<div class="fr mtm"><a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="bt bg-color bold"><?php _e("Lire l'article")?></a></div>
 
 		</article>
@@ -98,3 +100,5 @@
 
 ?>
 </section>
+
+

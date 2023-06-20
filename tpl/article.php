@@ -4,22 +4,23 @@ if(!@$GLOBALS['content']['titre']) $GLOBALS['content']['titre'] = $GLOBALS['cont
 ?>
 
 <style>
-	aside { border-left: 0.2em solid #78cfd6; }
+	aside { border-left: 0.2em solid #c24859; }
 </style>
 
 
 <section class="mw960p mod center mtm mbl">
 
-	<?php h1('titre', 'tc up')?>
+	<?php h1('titre')?>
+    <div class="img-article">
+        <?php media('visuel', '250')?>
+        <article class="fl w80 prl pbm">
 
-	<article class="fl w80 prl pbm">
+            <?php txt('texte', array('dir'=>'actu'))?>
 
-		<?php txt('texte', array('dir'=>'actu'))?>
+            <?php if($res['tpl'] == "event-formulaire") include 'contact.php';?>
 
-		<?php if($res['tpl'] == "event-formulaire") include 'contact.php';?>
-
-	</article>
-
+        </article>
+    </div>
 
 	<aside class="fr w20 plt animation slide-right">
 
