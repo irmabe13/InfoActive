@@ -1612,3 +1612,12 @@ header #logo { transition: opacity .5s; }
 	background: black !important;
 	border: .15em solid white !important;
 }
+
+/* container-header */
+.container-header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+
+}
