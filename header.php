@@ -3,7 +3,7 @@
 
 <header role="banner">
     <div class="container-header">
-        <div class="center ptm tc"><a href="<?=$GLOBALS['home']?>"><?php media('logo', '320')?></a></div>
+        <div class="center ptm tc"><a href="<?=$GLOBALS['home']?>"><?php media('logo', '200')?></a></div>
         <nav role="navigation" class="mtm mbm tc" aria-label="<?php _e("Browsing menu")?>">
 
             <button type="button" class="burger" aria-expanded="false" aria-controls="main-navigation">
