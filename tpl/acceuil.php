@@ -1,6 +1,6 @@
 <?php if(!$GLOBALS['domain']) exit;?>
 <div class="container-acceuil">
-    <h2>Qui sommes-nous ?</h2>
+    <h2> Qui sommes-nous ? </h2>
     <article class="pal ptm">
 
         <?php txt('texte')?>
