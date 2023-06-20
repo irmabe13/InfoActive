@@ -18,6 +18,7 @@ h1 {
 h2, h3 {
 	color: #35747f;
 	font-weight: lighter;
+	text-align: center;
 }
 
 
@@ -1181,7 +1182,8 @@ header #logo { transition: opacity .5s; }
 		padding-left: 0.5rem !important;
 		padding-right: 0.5rem !important;
 	}
-		
+
+
 	.editable img.fl, .editable img.fr {
 		float: none;
 		display: block;
