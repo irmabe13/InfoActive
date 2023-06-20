@@ -2,12 +2,12 @@
 
 <footer role="contentinfo">
 
-    <section class="mw960p center grid">
+	<section class="mw960p center grid footer1">
 
         <div>
 
-            <?php h3('footer-titre-contact', 'medium up')?>
-            <?php txt('footer-texte-contact')?>
+            <?php media('footer-logo', '250')?>
+			<?php txt('footer-texte-contact')?>
 
         </div>
 
@@ -39,7 +39,14 @@
 
         </div>
 
-    </section>
+        <div>
+            <?php h3('footer-titre-partenaires', 'medium up')?>
+            <?php media('partenaire-logo', '250')?>
+
+        </div>
+
+	</section>
+	
 
 
     <section class="mod w100 tc"><?php txt('webmaster')?></section>
