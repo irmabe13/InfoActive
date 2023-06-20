@@ -17,7 +17,7 @@ h1 {
 h2, h3 {
 	color: #070606;
 	font-weight: lighter;
-	text-align: left;
+	text-align: center;
 }
 
 
@@ -1663,7 +1663,7 @@ article ul li {
 	list-style: none;
 }
 
-#visuel{
+
 
 }
 .img-article{
