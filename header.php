@@ -10,7 +10,7 @@
 		<span class="open">Menu</span>
 		<span class="close none"><?php _e("Close")?></span>
 	</button>
-	
+
 	<ul id="main-navigation" class="grid up">
 		<?php
 		// Extraction du menu
@@ -30,13 +30,13 @@
 	</nav>
 
 
-		
-	
-    
-	
+
+
+
+
 </div>
 
-	
+
 <section class="mw960p mod center relative">
 
 
@@ -46,10 +46,10 @@
 		<input type="checkbox" name="high-contrast" id="high-contrast"<?=(@$_COOKIE['high-contrast']?'checked="checked"':'')?>> <label for="high-contrast"><?php _e("Enhanced contrast")?></label>
 	</div>
 
-	
 
 
-	
+
+
 
 	</section>
 </header>
