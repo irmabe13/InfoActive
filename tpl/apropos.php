@@ -10,29 +10,6 @@
                 </p>
             </article>
     </section>
-    <style>
-        .propos{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .actions {
-            border-radius: initial;
-            position: relative;
-            margin-right: 30px;
-            margin-left: 30px;
-            border: 1px solid black;
-            text-align: center;
-            flex: 1;
-            padding: 0 1rem 0 1rem;
-        }
-        .container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-
-        }
-    </style>
     <section>
         <?php h2('titre-3', 'mbn tdn tc ')?>
         <div class="container">
@@ -50,7 +27,6 @@
             </div>
         </div>
     </section>
-
     <section class="mw960p mod center mtm mbl">
         <?php h2('titre-4', 'mbn tdn tc ')?>
         <?php h3('titre-5', 'mbn tdn tc ')?>
@@ -113,33 +89,5 @@
             </ul>
         </article>
     </section>
-    <style>
-        .rectangle {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background-color: #f2f2f2;
-            border: 1px solid black;
-        }
-        .person-info {
-            flex: 1;
-        }
-        .person-name {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        .person-profession {
-            font-style: italic;
-            color: #999;
-            margin-left: 4rem;
-        }
-        .person-sentence {
-            flex: 2;
-        }
-        article ul li {
-            list-style: none;
-        }
-    </style>
 
 
