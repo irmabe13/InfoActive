@@ -2,31 +2,21 @@
 <div class="container-acceuil">
     <h2> Qui sommes-nous ? </h2>
     <article class="pal ptm">
-
         <?php txt('texte')?>
-
     </article>
-
     <a href="http://infoactiv.local/a-propos"> <button class="button1">En savoir plus</button></a>
     <a href="http://infoactiv.local/blog"><h3>Dernières actus</h3></a>
-
-
     <style>
         .content article { border-left: 0.2em solid #c24859; }
     </style>
-
     <section class="mw960p mod center mtm mbl">
-
-
         <nav role="navigation" class="mts tc italic">
             <?php
             // Liste les tags pour filtrer la page
             $i = 1;
             $sel_tag_list = $connect->query("SELECT distinct encode, name FROM ".$table_tag." WHERE zone='".$res['url']."' ORDER BY ordre ASC, encode ASC");
             //echo $connect->error;
-
             if($sel_tag_list->num_rows) _e("Catégories : ");
-
             while($res_tag_list = $sel_tag_list->fetch_assoc()) {
                 if($i > 1) echo', ';
                 echo'<a href="'.make_url($res['url'], array($res_tag_list['encode'], 'domaine' => true)).'" class="color tdn dash">'.$res_tag_list['name'].'</a>';
@@ -34,26 +24,20 @@
             }
             ?>
         </nav>
-
         <div class="mod">
             <div class="fl"><?php media('img', '130')?></div>
             <div class="fl mlm"><?php txt('description')?></div>
         </div>
-
         <?php
         // Si on n'a pas les droits d'édition des articles on affiche uniquement ceux actifs
         if (!@$_SESSION['auth']['edit-article']) $sql_state = "AND state='active'";
         else $sql_state = "";
-
         // Navigation par page
         if (isset($GLOBALS['filter']['page'])) $page = (int)$GLOBALS['filter']['page'];
         else $page = 1;
-
         $start = ($page * $num_pp) - $num_pp;
-
         // Construction de la requête
         $sql = "SELECT SQL_CALC_FOUND_ROWS ".$tc.".id, ".$tc.".* FROM ".$tc;
-
         // Si filtre tag
         if (isset($tag))
             $sql .= " RIGHT JOIN ".$tt."
@@ -63,30 +47,21 @@
 			".$tt.".zone = 'actualites' AND
 			".$tt.".encode = '".$tag."'
 		)";
-
         $sql .= " WHERE (".$tc.".type='article') AND ".$tc.".lang='".$lang."' ".$sql_state."
 	ORDER BY ".$tc.".date_insert DESC
 	LIMIT ".$start.", ".$num_pp;
-
         $sel_fiche = $connect->query($sql);
-
         $num_total = $connect->query("SELECT FOUND_ROWS()")->fetch_row()[0]; // Nombre total de fiche
-
         // Définir le nombre maximum d'articles à afficher
         $maxArticles = 3;
         $articleCount = 0;
-
         while ($res_fiche = $sel_fiche->fetch_assoc()) {
             // Affichage du message pour dire si l'article est invisible ou pas
             if ($res_fiche['state'] != "active") $state = " <span class='deactivate pat'>".__("Article d&eacute;sactiv&eacute;")."</span>";
             else $state = "";
-
             $content_fiche = json_decode((string)$res_fiche['content'], true);
-
             $date = explode("-", explode(" ", $res_fiche['date_insert'])[0]);
-
             ?>
-
             <article class="mod plm mrm mtl mbm">
                 <div class="date fl prm up bold big tc">
                     <div class="bigger"><?= $date[2] ?></div>
@@ -97,18 +72,13 @@
                 <img src="<?php echo $content_fiche['visuel'] ?>" alt="">
                 <div class="fr mtm"><a href="<?= make_url($res_fiche['url'], array("domaine" => true)); ?>" class="bt bg-color bold"><?php _e("Lire l'article") ?></a></div>
             </article>
-
             <?php
             $articleCount++;
-
             if ($articleCount >= $maxArticles) {
                 break;
             }
         }
-
         page($num_total, $page);
         ?>
     </section>
-
-
 </div>

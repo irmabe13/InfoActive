@@ -7,7 +7,7 @@ a {
 	.selected { text-decoration: underline; }
 
 h1 {
-	color: #ff 0000;
+	color:#815a79;
 	text-transform: uppercase;
 	font-weight: lighter;
 	font-size: 2em;
@@ -1715,3 +1715,5 @@ article ul li {
 	color:#35747f ;
 	background:white ;
 }
+
+

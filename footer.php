@@ -1,19 +1,11 @@
 <?php if(!$GLOBALS['domain']) exit;?>
-
 <footer role="contentinfo">
-
 	<section class="mw960p center grid footer1">
-
         <div>
-
             <?php media('footer-logo', '250')?>
 			<?php txt('footer-texte-contact')?>
-
         </div>
-
-
         <div>
-
             <?php h3('footer-titre-actu', 'medium up')?>
 
             <!--Va chercher les dernieres actu-->
@@ -28,33 +20,18 @@
                 }
                 ?>
             </ul>
-
         </div>
-
-
         <div>
-
             <?php h3('footer-titre-suivez-nous', 'medium up')?>
             <?php txt('footer-texte-suivez-nous', 'color bigger')?>
-
         </div>
-
         <div>
             <?php h3('footer-titre-partenaires', 'medium up')?>
             <a href="https://www.toma-interim.com/" target="_blank"><?php media('partenaire-logo', '250')?></a>
-
         </div>
-
 	</section>
-	
-
-
     <section class="mod w100 tc"><?php txt('webmaster')?></section>
-
-
 </footer>
-
-
 <noscript>
     <style>
         /* Si pas de Javascript on affiche les contenus invisibles en attente d'animation */
