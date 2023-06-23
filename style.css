@@ -1,13 +1,14 @@
 a {
-	color: #815a79;
+
+	color: rgb(0, 0, 0);
 	text-decoration: underline;
 	transition: color .3s;
 }
-	a:hover { color: #c24859; }
+	a:hover { color: #ffffff; }
 	.selected { text-decoration: underline; }
 
 h1 {
-	color: #ff 0000;
+	color: #000000;
 	text-transform: uppercase;
 	font-weight: lighter;
 	font-size: 2em;
@@ -259,7 +260,7 @@ p, .p-like, ul, ol, dl, blockquote, pre, td, th, label, textarea, caption, detai
 	line-height: 1.5;
 }
 
-p { margin-bottom: 2em; } /* marge accessible sur les paragraphes */
+p { margin-bottom: 0em; } /* marge accessible sur les paragraphes */
 
 h1, .h1-like { font-size: 3.2rem; }
 h2, .h2-like { font-size: 2.8rem; }
@@ -1682,19 +1683,20 @@ article ul li {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: inherit;
-
-
-
 }
 
-
+footer{
+	background-color: #44a0cc;
+}
+footer p{
+	margin-top: 1rem;
+}
 /* container-header */
-.container-header{
+.container-header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
-
 }
 
 /* container-acceuil */
