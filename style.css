@@ -4,7 +4,7 @@ a {
 	text-decoration: underline;
 	transition: color .3s;
 }
-	a:hover { color: #ffffff; }
+	 footer a:hover { color: #ffffff; }
 	.selected { text-decoration: underline; }
 
 h1 {
@@ -13,12 +13,14 @@ h1 {
 	font-weight: lighter;
 	font-size: 2em;
 	margin: 0.67em 0;
+	font-family: 'Source Code Pro', monospace;
 }
 
 h2, h3 {
 	color: #070606;
 	font-weight: lighter;
 	text-align: center;
+	font-family: 'Source Code Pro', monospace;
 }
 
 
@@ -1631,6 +1633,7 @@ header #logo { transition: opacity .5s; }
 	text-align: center;
 	flex: 1;
 	padding: 0 1rem 0 1rem;
+	background:#2ecc71 ;
 }
 .container {
 	display: flex;
@@ -1644,6 +1647,7 @@ header #logo { transition: opacity .5s; }
 	padding: 1rem;
 	background-color: #f2f2f2;
 	border: 1px solid black;
+	background:#2ecc71 ;
 }
 .person-info {
 	flex: 1;
@@ -1716,4 +1720,15 @@ footer p{
 	border-radius: 20px;
 	color:#35747f ;
 	background:white ;
+}
+
+
+@font-face {
+	font-family: 'SourceCodeProRegular';
+	src: url('fonts/SourceCodeProRegular.eot');
+	src: url('fonts/SourceCodeProRegular.eot') format('embedded-opentype'),
+	url('fonts/SourceCodeProRegular.woff2') format('woff2'),
+	url('fonts/SourceCodeProRegular.woff') format('woff'),
+	url('fonts/SourceCodeProRegular.ttf') format('truetype'),
+	url('fonts/SourceCodeProRegular.svg#SourceCodeProRegular') format('svg');
 }
