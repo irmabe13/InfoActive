@@ -3,33 +3,31 @@ if(!$GLOBALS['domain']) exit;
 if(!@$GLOBALS['content']['titre']) $GLOBALS['content']['titre'] = $GLOBALS['content']['title'];
 ?>
 
-<article class="mw960p mod center mtm mbl">
+<article class="fs-clamp mw960p center ptl pbl">
 
-	<div>
 
-		<hgroup>
+	<hgroup class="mbl">
 
-			<?php media('visuel', '250')?>
+		<?php media('visuel', '250')?>
 
-			<?php h1('titre')?>
+		<?php h1('titre','h2 mbn')?>
 
-			<p>
-				Article publié le 
-				<time class="" datetime="<?=$res['date_insert']?>"><?=strftime('%d %B %Y', strtotime(@$res['date_insert']))?></time>
-			</p>
-			
-			<?php tag('actualites')?>
-			
-		</hgroup>
+		<p class="monospace bold">
+			Article publié le 
+			<time class="" datetime="<?=$res['date_insert']?>"><?=strftime('%d %B %Y', strtotime(@$res['date_insert']))?></time>
+		</p>
+		
+		<?php tag('actualites')?>
+		
+	</hgroup>
 		
 		
-		<?php txt('texte', ['class' => '','dir'=>'actu'])?>
+	<?php txt('texte', ['class' => '','dir'=>'actu'])?>
 
-	</div>
 
-	<aside>
+	<aside class="ptl">
 
-		<a href="./actualite" class="">Retour au blog</a>
+		<a href="./actualite" class="cta__primary">Retour au blog</a>
 		
 	</aside>
 

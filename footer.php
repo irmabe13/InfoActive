@@ -1,6 +1,6 @@
 <?php if(!$GLOBALS['domain']) exit;?>
 <footer role="contentinfo">
-	<section class="mw960p center grid footer1">
+	<section class="mw960p center grid">
         <div>
             <?php media('footer-logo', '250')?>
 			<?php txt('footer-texte-contact')?>

@@ -1,28 +1,106 @@
-a {
+/*
+ * BASES
+ */
 
+a {
+	font-family: 'Source Code Pro', monospace;
 	color: rgb(0, 0, 0);
-	text-decoration: underline;
+	text-decoration: none;
 	transition: color .3s;
 }
 	 footer a:hover { color: #ffffff; }
 	.selected { text-decoration: underline; }
 
 h1 {
-	color: #000000;
 	text-transform: uppercase;
-	font-weight: lighter;
-	font-size: 2em;
+	font-weight: bold;
+	font-size: 3em;
 	margin: 0.67em 0;
 	font-family: 'Source Code Pro', monospace;
 }
 
-h2, h3 {
+h1:not(.h2)::after {
+	content:'_';
+	display: inline;
+}
+
+h2, .h2,
+h3, .h3 {
 	color: #070606;
-	font-weight: lighter;
-	text-align: center;
 	font-family: 'Source Code Pro', monospace;
 }
 
+h2, .h2 {
+	font-size: 1.8em;
+	text-transform: uppercase;
+}
+
+h2::before,
+.h2::before{
+	content: '›';
+	font-size: 1.3em;
+}
+
+h3, .h3 {
+	font-size: 1.2em;
+}
+
+/*
+ * CLASSES UTILITAIRES
+ */
+
+ @font-face {
+	font-family: 'SourceCodeProRegular';
+	src: url('fonts/SourceCodeProRegular.eot');
+	src: url('fonts/SourceCodeProRegular.eot') format('embedded-opentype'),
+	url('fonts/SourceCodeProRegular.woff2') format('woff2'),
+	url('fonts/SourceCodeProRegular.woff') format('woff'),
+	url('fonts/SourceCodeProRegular.ttf') format('truetype'),
+	url('fonts/SourceCodeProRegular.svg#SourceCodeProRegular') format('svg');
+}
+
+.monospace {
+	font-family: 'Source Code Pro', monospace;
+}
+
+
+.fs-clamp {
+	font-size: clamp(1.2rem, 1.1rem + 0.6667vw, 2.5rem) !important;
+}
+
+/*
+ * CLASSES COMPOSANTS
+ */
+
+/* header */
+.header__accessibilite,
+	.header__accessibilite nav ul,
+.header__menu,
+	.header__menu nav ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0 2rem;
+
+	vertical-align: middle;
+}
+
+.header__menu {
+	justify-content: space-between;
+}
+
+.header__menu nav ul {
+	gap: 0 3rem;
+}
+	.header__menu nav ul li a {
+		display: inline-block;
+		padding: .5rem 1rem;
+		transition all .3s;
+	}
+	.header__menu nav ul li a:hover {
+		background: #ff1239;
+	}
 
 /* bouton pour les liens */
 .bt, .bt.internal {
@@ -37,24 +115,68 @@ h2, h3 {
 		color: #fff;
 	}
 
+.cta__primary,
+.cta__secondary,
+.cta__tertiary {
+	display: inline-block;
+	font-family: 'Source Code Pro', monospace;
+	font-size: .8em;
+	padding: 1rem 1.5rem;
+	text-decoration: none;
+	border: 2px solid transparent;
+	border-radius: .5rem;
+}
+
+.cta__primary {
+	background: #000;
+	color: #fff;
+}
+
+.cta__primary::after,
+.cta__tertiary::after {
+	content: '→';
+	display: inline-block;
+	padding-left:.5rem;
+}
+
+.cta__secondary {
+	border-color: rgba(255, 255, 255, 0.3);
+	color: inherit;
+}
+
+.cta__tertiary {
+	font-size: 1em;
+}
+
+/* actualités */
+.actus .actus__header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.actus .actus__article:not(:last-child) {
+	display: block;
+	border-bottom: 1px solid #2D3F4B;
+}
+
+
 
 
 /* Couleur */
-.color { color: #8e5773; }
-.color-alt { color: #76a5af; }
+.color { color:#265200; }
+.color--alt { color: #293541 !important; }
 
 .bg-color {
-	background-color: #8e5773;
+	background: #1100ff;
 	color: #fff;
 }
 	a.bg-color:hover, a .bg-color:hover  {
 		background-color: #fff;
 		color: #8e5773;
 	}
-
-
-/* Header */
-header { box-shadow: 0px 10px 9px -9px rgba(153,156,153,0.37); }
 
 
 /* Formulaire contact */
@@ -78,13 +200,13 @@ html {
 body {
 	margin: 0;
 	box-sizing: border-box;	
-	background-color: #fff;
-	color: #000;
+	background-color: #eee;
+	color: #2C353E;
 	font-family: Helvetica, Arial, sans-serif;
 	line-height: 1.5;
+	font-size: 1.4rem;
 	/* letter-spacing: 0.12em; Accessible */
 	/* word-spacing: 0.16em; Accessible */
-	font-size: 1.4rem;
 }
 
 
@@ -264,12 +386,12 @@ p, .p-like, ul, ol, dl, blockquote, pre, td, th, label, textarea, caption, detai
 
 p { margin-bottom: 0em; } /* marge accessible sur les paragraphes */
 
-h1, .h1-like { font-size: 3.2rem; }
+/*h1, .h1-like { font-size: 3.2rem; }
 h2, .h2-like { font-size: 2.8rem; }
 h3, .h3-like { font-size: 2.4rem; }
 h4, .h4-like { font-size: 2rem; }
 h5, .h5-like { font-size: 1.8rem; }
-h6, .h6-like { font-size: 1.6rem; }
+h6, .h6-like { font-size: 1.6rem; }*/
 
 em, .italic, address, cite, i, var { font-style: italic; }
 
@@ -821,8 +943,12 @@ input[type="reset"].unstyled:focus {
 .w1140p { width: 1140px; } */
 
 .mw320p { max-width: 320px; }
+.mw640p { max-width: 640px; }
 .mw960p { max-width: 960px; }
 .mw1140p { max-width: 1140px; }
+
+.mw70ch {max-width: 70ch;}
+
 .wauto { width: auto; }
 
 /* spacing helpers
@@ -983,96 +1109,6 @@ div.editable {
 		transform: translate3d(0, 0, 0) !important;
 	}
 
-
-
-/* HEADER */
-
-/* header .acces-rapide { 
-	position: absolute;
-	top: -100px;
-}
-	header .acces-rapide:focus { top: 0; left: 0; } */
-
-
-header #logo { transition: opacity .5s; }
-	header #logo:hover { opacity: 0.6; }
-
-
-/* MENU DE NAVIGATION */
-	header nav ul {
-		list-style: none;
-		display: inline-block;
-		padding: 0;
-		margin-top: 2rem;
-	}
-		header nav li {
-			float: left;
-			margin: 0 0.5rem;
-		}
-		header nav a { text-decoration: none; }
-
-
-	/* BOUTON BURGER & Animation */
-	header nav .burger {
-		display: none;
-		position: absolute;
-		overflow: hidden;
-		float: right;
-		top: 10px;
-		right: 0;
-		margin: 0 1rem;
-		padding: 0;
-		width: 30px;
-		height: 30px !important;
-		font-size: 0;
-		text-indent: -9999px;
-		appearance: none;
-		box-shadow: none;
-		border-radius: 3px;
-		border: none;
-		cursor: pointer;
-		transition: background 0.3s;
-
-		background-color: #35747f;
-	}
-		.burger span {
-			position: absolute;
-			top: 14px;
-			left: 6px;
-			right: 6px;
-			height: 2px;
-			background: white;
-
-			transition: background 0.3s;
-		}
-
-			.burger span::before,
-			.burger span::after {
-				position: absolute;
-				display: block;
-				left: 0;
-				width: 100%;
-				height: 2px;
-				background-color: #fff;
-				content: "";
-
-				transition-duration: 0.3s, 0.3s;
-				transition-delay: 0.3s, 0s;
-			}
-
-			.burger span::before { top: -6px; transition-property: top, transform; }
-			.burger span::after { bottom: -6px; transition-property: bottom, transform; }
-
-		/* active state, i.e. menu open */
-		.burger.active { background-color: #cb0032; }
-			.burger.active span { background: none; }
-				.burger.active span::before { top: 0; transform: rotate(45deg);	}
-				.burger.active span::after { bottom: 0; transform: rotate(-45deg); }
-				.burger.active span::before,
-				.burger.active span::after { transition-delay: 0s, 0.3s; }
-
-
-
 /* HIDING content */
 @media (max-width: 640px) {
 	.no-small-screen, .noss { display: none !important; }
@@ -1087,76 +1123,7 @@ header #logo { transition: opacity .5s; }
 /* RESPONSIVE big */
 @media (max-width: 850px)
 {
-	header nav .burger {
-		display: block;
-	    z-index: 12;
-	}
-
-	header nav > ul {
-		background-color: #fff;
-
-		display: block;
-		visibility: hidden;
-
-		/* position: fixed !important; */
-		position: absolute !important;
-
-		left: 0;
-		top: 0;
-		/* bottom: 0; */
-
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
-
-		width: 300px;
-
-		margin: 0;
-		padding-top: 0.5rem;
-
-		z-index: 10;
-
-		text-align: center;
-
-		transition-duration: 0.3s;
-		transform: translateX(-100%);
-		-webkit-transform: translateX(-100%);
-	}
-		header nav li {
-			float: none;
-			padding: 0;
-			margin-left: 0 !important;
-			border-radius: 5px;
-			transition: background 0.3s;
-		}
-			header nav li:hover { background-color: #dfdfdf; }
-			header nav li a {
-				display: block;
-				padding: 0.5rem;
-			}
-
-	/* Raz du header */
-	.responsive-nav header { position: inherit; }
-	/* Ouvertur du menu */
-	.responsive-nav header nav ul {
-		visibility: visible;
-		grid-auto-flow: inherit;
-		transform: translateX(0);
-		-webkit-transform: translateX(0);
-	}
-	/* Overlay menu */
-	/* .responsive-nav .responsive-overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: rgba(0, 0, 0, 0.6);
-	} */
-	/* Fixe le burger*/
-	.responsive-nav .burger {
-		/* position: fixed; */
-		position: absolute;
-	}
+	
 
 	/* mode edition : menu d'ajout invisible */
 	.dragger { display: none !important; }
@@ -1723,12 +1690,3 @@ footer p{
 }
 
 
-@font-face {
-	font-family: 'SourceCodeProRegular';
-	src: url('fonts/SourceCodeProRegular.eot');
-	src: url('fonts/SourceCodeProRegular.eot') format('embedded-opentype'),
-	url('fonts/SourceCodeProRegular.woff2') format('woff2'),
-	url('fonts/SourceCodeProRegular.woff') format('woff'),
-	url('fonts/SourceCodeProRegular.ttf') format('truetype'),
-	url('fonts/SourceCodeProRegular.svg#SourceCodeProRegular') format('svg');
-}

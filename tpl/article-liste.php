@@ -1,8 +1,8 @@
 <?php  if(!$GLOBALS['domain']) exit; ?>
 
-<section class="mw960p mod center mtm mbl">
+<section class="fs-clamp mw960p pam ptl pbl">
 
-	<?php h1('title', 'mbn tc')?>
+	<?php h1('title', 'mw960p left')?>
 
 	<nav role="navigation" class="mts tc italic">
 		<?php 
@@ -20,6 +20,11 @@
 		}
 		?>
 	</nav>
+
+
+	<div class="actus__liste">
+
+	
 
 	<?php 
 	// Si on n'a pas les droits d'édition des articles on affiche uniquement ceux actifs
@@ -64,21 +69,21 @@
 		$date = explode("-", explode(" ", $res_fiche['date_insert'])[0]);
 		?>
 
-		<a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="tdn">
-			<article class="mod plm mrm mtl mbm">
+		<a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="tdn actus__article">
 
-				<hgroup>
-					<h2><?=$res_fiche['title']?><?=$state?'<aside>'.$state.'</aside>':null;?></h2>
+			<article class="ptl pbl">
 
-					<p>
-						Article publié le 
-						<time class="" datetime="<?=$res_fiche['date_insert']?>"><?=strftime('%d %B %Y', strtotime(@$res_fiche['date_insert']))?></time>
-					</p>
-				</hgroup>
+				<h2 class="mbn"><?=$res_fiche['title']?><?=$state?'<aside>'.$state.'</aside>':null;?></h2>
 
-				<p class="article-text"><?php if(isset($content_fiche['texte'])) echo word_cut($content_fiche['texte'], '350')."…";?></p>
+				<time class="monospace bold" datetime="<?=$res_fiche['date_insert']?>"><?=strftime('%d %B %Y', strtotime(@$res_fiche['date_insert']))?></time>
+
+				<p class="mtm mbm color--alt"><?php if(isset($content_fiche['texte'])) echo word_cut($content_fiche['texte'], '350')."…";?></p>
 				
-				<div class="fr mtm"><a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="bt bg-color bold"><?php _e("Lire l'article")?></a></div>
+				<div class="tr">
+
+					<a href="<?=make_url($res_fiche['url'], array("domaine" => true));?>" class="cta__tertiary"><?php _e("Lire l'article")?></a>
+
+				</div>
 
 			</article>
 		</a>
@@ -88,6 +93,8 @@
 	page($num_total, $page);
 
 ?>
+	</div>
+	
 </section>
 
 
